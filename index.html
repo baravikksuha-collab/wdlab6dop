@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOREALIS - Агентство цифровых продуктов</title>
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Unbounded:wght@500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">BOREALIS<span>®</span></div>
+            <div class="preloader-bar"><div class="preloader-progress" id="progress"></div></div>
+            <div class="preloader-count"><span id="count">0</span>%</div>
+        </div>
+    </div>
+
+    <!-- ПРОГРЕСС СКРОЛЛА -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ИНТЕРАКТИВНЫЙ ОВЕРЛЕЙ ПРИ НАЖАТИИ НА КНОПКУ-КЛЮЧ -->
+    <div class="page-transition" id="pageTransition" aria-hidden="true">
+        <div class="key-modal-card" role="dialog" aria-live="polite">
+            <div class="key-modal-badge">⚿ КЛЮЧ АКТИВИРОВАН</div>
+            <h3 class="key-modal-title" id="pageTransitionLabel">ОТКРЫВАЮ РАЗДЕЛ...</h3>
+            <p class="key-modal-desc" id="pageTransitionDesc">
+                Подготавливаю страницу с подробностями и разборами в этом же окне.
+            </p>
+            <div class="key-modal-loader">
+                <div class="key-modal-loader-bar" id="keyLoaderBar"></div>
+            </div>
+            <div class="key-modal-actions">
+                <a href="#" class="key-go-now" id="keyGoNowBtn">Перейти сейчас →</a>
+                <button type="button" class="key-cancel-btn" id="keyCancelBtn">Остаться здесь</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ПЛАВАЮЩЕЕ МЕНЮ -->
+    <div class="floating-actions" id="fab">
+        <nav class="fab-menu" id="fabMenu" aria-label="Меню сайта">
+            <a href="#top" class="fab-item" data-sec="top" style="--i:3"><span>Главная</span><i>01</i></a>
+            <a href="#cases" class="fab-item" data-sec="cases" style="--i:2"><span>Кейсы</span><i>02</i></a>
+            <a href="#technologies" class="fab-item" data-sec="technologies" style="--i:1"><span>Технологии</span><i>03</i></a>
+            <button type="button" class="fab-item" id="themeToggle" style="--i:0"><span>Тема</span><i>◐</i></button>
+        </nav>
+        <div class="fab-row">
+            <a href="#contact-modal" class="floating-contact"><span class="fc-dot"></span> Принимаю заказы</a>
+            <button type="button" class="fab-toggle" id="fabToggle" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+            <a href="#top" class="scroll-top" title="Наверх">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div id="contact-modal" class="modal-overlay">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            <h3 class="modal-title">Обсудить проект</h3>
+            <p class="modal-subtitle">Оставьте контакты — вернусь с ответом в течение 24 часов.</p>
+
+            <form action="#" class="contact-form" id="contactForm">
+                <div class="input-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" placeholder="Иван Иванов" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Телефон или Telegram</label>
+                    <input type="text" id="phone" placeholder="+375 (29) 123-45-67" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">Пожелания к проекту</label>
+                    <textarea id="message" rows="3" placeholder="Хочу крутой сайт для..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Отправить заявку</span>
+                </button>
+            </form>
+
+            <div class="modal-footer">
+                <span>Или напишите мне напрямую:</span>
+                <a href="https://t.me/kseeny" target="_blank">Ксения · tg @kseeny</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- СЕКЦИЯ 1 -->
+    <main class="agency-split" id="top">
+
+        <section class="left-panel">
+
+            <div class="bg-pattern">
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+                <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            </div>
+
+            <!-- ЛОГОТИП ТОЛЬКО НА ГЛАВНОМ ЭКРАНЕ + ЛИНИЯ ДО ФОТО -->
+            <div class="hero-brand">
+                <div class="logo">BOREALIS<span>®</span></div>
+            </div>
+
+            <div class="hero-content">
+                <h1 class="title">
+                    <span class="reveal-line">Мы создаем</span><br>
+                    <span class="reveal-line accent-text">цифровые</span><br>
+                    <span class="reveal-line">продукты</span>
+                </h1>
+
+                <div class="description-wrapper">
+                    <p class="description">
+                        <span class="text-accent">BOREALIS</span> — студия цифрового дизайна. Мы относимся к работе с трепетом и создаем интерфейсы, которые продают.<br>
+                        Основатель — <span class="text-light">Ксения Боровик</span>
+                    </p>
+                </div>
+
+                <div class="action-group mt-large">
+                    <a href="#contact-modal" class="btn btn-primary">
+                        <span>Обсудить проект</span>
+                    </a>
+                    <a href="#cases" class="btn btn-secondary">
+                        <span>Смотреть кейсы</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- НЕПРЕРЫВНАЯ БЕСШОВНАЯ БЕГУЩАЯ СТРОКА -->
+            <div class="marquee">
+                <div class="marquee-track">
+                    <div class="marquee-content">
+                        <span>UX/UI ДИЗАЙН</span> <span class="star">✱</span>
+                        <span>РАЗРАБОТКА</span> <span class="star">✱</span>
+                        <span>БРЕНДИНГ</span> <span class="star">✱</span>
+                        <span>АРТ-ДИРЕКШН</span> <span class="star">✱</span>
+                    </div>
+                    <div class="marquee-content" aria-hidden="true">
+                        <span>UX/UI ДИЗАЙН</span> <span class="star">✱</span>
+                        <span>РАЗРАБОТКА</span> <span class="star">✱</span>
+                        <span>БРЕНДИНГ</span> <span class="star">✱</span>
+                        <span>АРТ-ДИРЕКШН</span> <span class="star">✱</span>
+                    </div>
+                    <div class="marquee-content" aria-hidden="true">
+                        <span>UX/UI ДИЗАЙН</span> <span class="star">✱</span>
+                        <span>РАЗРАБОТКА</span> <span class="star">✱</span>
+                        <span>БРЕНДИНГ</span> <span class="star">✱</span>
+                        <span>АРТ-ДИРЕКШН</span> <span class="star">✱</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="right-panel">
+            <div class="image-wrapper">
+                <img src="me.jpg" alt="Ксения Боровик" class="img-main">
+                <img src="me2.jpg" alt="Ксения Боровик" class="img-hover">
+
+                <div class="image-tag">
+                    <span class="love-trigger">
+                        СДЕЛАНО С ЛЮБОВЬЮ
+                        <span class="love-hearts" aria-hidden="true">
+                            <i class="heart h1">♥</i>
+                            <i class="heart h2">♥</i>
+                            <i class="heart h3">♥</i>
+                        </span>
+                    </span>
+                    <span>МИНСК / ОНЛАЙН</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- СЕКЦИЯ 2 -->
+    <section class="achievements-slider reveal" id="cases">
+
+        <div class="slider-container">
+
+            <!-- КОЛОНКА 1 -->
+            <div class="slide">
+                <div class="slide-dark-bg"></div>
+                <div class="slide-word">АРХИТЕКТУРА</div>
+
+                <div class="slide-content">
+                    <div class="s-num">100%</div>
+                    <h3>Архитектура бренда</h3>
+                    <p>Выстраиваем прочный фундамент из стратегии и аналитики, на котором держится весь ваш бизнес.</p>
+                </div>
+
+                <div class="slide-scene scene-city">
+                    <div class="building b1"><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div></div>
+                    <div class="building b2"><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div></div>
+                    <div class="building b3"><div class="win"></div><div class="win"></div><div class="win"></div></div>
+                </div>
+            </div>
+
+            <!-- КОЛОНКА 2 -->
+            <div class="slide">
+                <div class="slide-dark-bg"></div>
+                <div class="slide-word">СКОРОСТЬ</div>
+
+                <div class="slide-content">
+                    <div class="s-num">0.8s</div>
+                    <h3>Безупречный код</h3>
+                    <p>Чистая верстка и загрузка быстрее одной секунды без багов.</p>
+                </div>
+
+                <div class="slide-scene scene-track">
+                    <div class="track"></div>
+                    <div class="car">🏎️</div>
+                </div>
+            </div>
+
+            <!-- КОЛОНКА 3 -->
+            <div class="slide">
+                <div class="slide-dark-bg"></div>
+                <div class="slide-word">ПРИЗНАНИЕ</div>
+
+                <div class="slide-content">
+                    <div class="s-num">12</div>
+                    <h3>Мировые награды</h3>
+                    <p>Наши интерфейсы отмечают на Awwwards, Behance и CSS Awards.</p>
+                </div>
+
+                <div class="slide-scene scene-carpet">
+                    <div class="carpet"></div>
+
+                    <div class="sticker st1">📸</div>
+                    <div class="sticker st2">🏆</div>
+                    <div class="sticker st3">🎖️</div>
+                    <div class="sticker st4">✨</div>
+                    <div class="sticker st5">❤️</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 3: ТЕХНОЛОГИИ, КОТОРЫМИ Я ВЛАДЕЮ -->
+    <section class="tech-section reveal" id="technologies">
+        <canvas class="aurora" id="aurora" aria-hidden="true"></canvas>
+        <div class="tech-header">
+            <h2 class="tech-title">Технологии, <span class="accent-text">которыми я владею</span></h2>
+        </div>
+
+        <div class="tech-grid">
+            <!-- КАРТОЧКА 1: СТРОЕНИЕ -->
+            <article class="tech-card">
+                <div class="tech-card-inner">
+                    <div>
+                        <div class="tech-card-top">
+                            <span class="tech-index">01</span>
+                        </div>
+                        <h3 class="tech-card-title">Строение продуктов</h3>
+                        <p class="tech-card-desc">
+                            Каркас интерфейсов, дизайн-системы и понятная иерархия данных — от идеи до масштабируемого макета.
+                        </p>
+                    </div>
+
+                    <a
+                        href="tech-structure.html"
+                        class="tech-key-btn"
+                        data-transition-label="СТРОЕНИЕ ПРОДУКТОВ"
+                        data-transition-desc="Открываю страницу про архитектуру интерфейсов, дизайн-системы и логику продуктов."
+                    >
+                        <span class="key-icon">⚿</span>
+                        <span>Открыть ключ</span>
+                        <span class="key-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- КАРТОЧКА 2: СКОРОСТЬ -->
+            <article class="tech-card">
+                <div class="tech-card-inner">
+                    <div>
+                        <div class="tech-card-top">
+                            <span class="tech-index">02</span>
+                        </div>
+                        <h3 class="tech-card-title">Скорость и плавность</h3>
+                        <p class="tech-card-desc">
+                            Лёгкая адаптивная вёрстка и живые CSS/JS-анимации без лишней бюрократии.
+                        </p>
+                    </div>
+
+                    <a
+                        href="tech-speed.html"
+                        class="tech-key-btn"
+                        data-transition-label="СКОРОСТЬ И ПЛАВНОСТЬ"
+                        data-transition-desc="Открываю страницу про быструю вёрстку, плавные анимации и работу в потоке."
+                    >
+                        <span class="key-icon">⚿</span>
+                        <span>Открыть ключ</span>
+                        <span class="key-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- КАРТОЧКА 3: ДОСТИЖЕНИЯ -->
+            <article class="tech-card">
+                <div class="tech-card-inner">
+                    <div>
+                        <div class="tech-card-top">
+                            <span class="tech-index">03</span>
+                        </div>
+                        <h3 class="tech-card-title">Достижения и новые инструменты</h3>
+                        <p class="tech-card-desc">
+                            Арт-дирекшн, автоматизация рутины и нейросети — смелые концепты превращаются в заметные проекты.
+                        </p>
+                    </div>
+
+                    <a
+                        href="tech-achievements.html"
+                        class="tech-key-btn"
+                        data-transition-label="ДОСТИЖЕНИЯ И ИНСТРУМЕНТЫ"
+                        data-transition-desc="Открываю страницу про достижения, автоматизацию и современные AI-инструменты."
+                    >
+                        <span class="key-icon">⚿</span>
+                        <span>Открыть ключ</span>
+                        <span class="key-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer class="site-footer" id="contacts">
+        <div class="bg-pattern" aria-hidden="true">
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+            <div class="bg-row">BOREALIS BOREALIS BOREALIS BOREALIS</div>
+        </div>
+
+        <div class="footer-top">
+            <div class="footer-lead">
+                <h2 class="footer-phrase">Спасибо, что заглянули <span class="accent-text"><br> и дошли до конца ✦</span></h2>
+            </div>
+
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <a href="https://t.me/kseeny" target="_blank" rel="noopener">Telegram · @kseeny</a>
+                <p>Минск / онлайн</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <a href="#top">Главная</a>
+                <a href="#cases">Кейсы</a>
+                <a href="#technologies">Технологии</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 BOREALIS®</span>
+            <span>Сделано с любовью <i class="footer-heart">♥</i></span>
+            <a href="#top" class="footer-up">Наверх ↑</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
